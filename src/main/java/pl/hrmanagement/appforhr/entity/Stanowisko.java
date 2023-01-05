@@ -2,11 +2,10 @@ package pl.hrmanagement.appforhr.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -17,6 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "stanowisko")
 public class Stanowisko {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_stanowisko", nullable = false)
     private Integer id;
 
@@ -31,5 +31,11 @@ public class Stanowisko {
 
     @Column(name = "maksymalne_zarobki", nullable = false)
     private BigDecimal maksymalneZarobki;
+
+    @OneToMany(mappedBy = "idStanowisko")
+    private Set<Oferta> ofertas = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idStanowisko")
+    private Set<HistoriaPracy> historiaPracies = new LinkedHashSet<>();
 
 }

@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -11,9 +13,12 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "oferta")
+@Table(name = "oferta", indexes = {
+        @Index(name = "oferta_stanowisko_fk", columnList = "id_stanowisko")
+})
 public class Oferta {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_oferta", nullable = false)
     private Integer id;
 
@@ -35,6 +40,12 @@ public class Oferta {
 
     @Column(name = "data_wystawienia_oferty", nullable = false)
     private LocalDate dataWystawieniaOferty;
+
+    @OneToMany(mappedBy = "idOferta")
+    private Set<Rekrutacja> rekrutacjas = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idOferta")
+    private Set<Podanie> podanies = new LinkedHashSet<>();
 
 
 }

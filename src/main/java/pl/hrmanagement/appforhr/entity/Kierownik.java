@@ -12,9 +12,12 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "kierownik")
+@Table(name = "kierownik", indexes = {
+        @Index(name = "dzial_kierownik_fk", columnList = "id_dzial")
+})
 public class Kierownik {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_kierownik", nullable = false)
     private Integer id;
 
@@ -72,6 +75,5 @@ public class Kierownik {
 
     @Column(name = "obowiazki", nullable = false, length = 100)
     private String obowiazki;
-
 
 }

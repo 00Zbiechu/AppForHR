@@ -2,10 +2,9 @@ package pl.hrmanagement.appforhr.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -16,12 +15,14 @@ import javax.persistence.Table;
 @Table(name = "kraj")
 public class Kraj {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_kraj", nullable = false)
     private Integer id;
 
     @Column(name = "kraj_nazwa", nullable = false, length = 30)
     private String krajNazwa;
 
-
+    @OneToMany(mappedBy = "idKraj")
+    private Set<Lokalizacja> lokalizacjas = new LinkedHashSet<>();
 
 }

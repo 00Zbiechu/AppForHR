@@ -201,7 +201,7 @@ create table OFERTA (
                         Id_stanowisko        INT4                 not null,
                         Tytul                VARCHAR(30)          not null,
                         Opis_oferty          VARCHAR(100)         not null,
-                        Wymagania            CHAR(100)            not null,
+                        Wymagania            VARCHAR(100)            not null,
                         Lokalizacja          VARCHAR(20)          not null,
                         Data_wystawienia_oferty DATE                 not null,
                         constraint PK_OFERTA primary key (Id_oferta)
@@ -360,8 +360,8 @@ create table STANOWISKO (
                             Id_stanowisko        SERIAL               not null,
                             Nazwa_stanowiska     VARCHAR(20)          not null,
                             Opis_stanowiska      VARCHAR(100)         not null,
-                            Minimalne_zarobki    MONEY                not null,
-                            Maksymalne_zarobki   MONEY                not null,
+                            Minimalne_zarobki    NUMERIC                not null,
+                            Maksymalne_zarobki   NUMERIC                not null,
                             constraint PK_STANOWISKO primary key (Id_stanowisko)
 );
 
@@ -546,7 +546,7 @@ INSERT INTO HISTORIA_PRACY (Id_stanowisko,Id_dzial,Id_pracownik,Rozpoczecie_prac
 INSERT INTO OFERTA (Id_stanowisko,Tytul,Opis_oferty,Wymagania,Lokalizacja,Data_wystawienia_oferty) VALUES (1,'IT','Szukamy programisty','Umiejętność programowania w JAVA','Koszalin','2022-11-11');
 INSERT INTO OFERTA (Id_stanowisko,Tytul,Opis_oferty,Wymagania,Lokalizacja,Data_wystawienia_oferty) VALUES (2,'Asystent','Szukamy asystenta','Umiejętność obsługi klienta','Koszalin','2022-11-12');
 INSERT INTO OFERTA (Id_stanowisko,Tytul,Opis_oferty,Wymagania,Lokalizacja,Data_wystawienia_oferty) VALUES (3,'Kadry','Szukamy HRowca','Umiejętność prowadzenia rozmów rekrutacyjnych','Koszalin','2022-11-13');
-INSERT INTO OFERTA (Id_stanowisko,Tytul,Opis_oferty,Wymagania,Lokalizacja,Data_wystawienia_oferty) VALUES (4,'Magazynier','Szukamy magazyniera','Umiejętność dźwigania duzych ciężarów','Koszalin','2022-11-14');
+INSERT INTO OFERTA (Id_stanowisko,Tytul,Opis_oferty,Wymagania,Lokalizacja,Data_wystawienia_oferty) VALUES (4,'Magazynier','Szukamy magazyniera','Umiejętność dźwigania dużych ciężarów','Koszalin','2022-11-14');
 INSERT INTO OFERTA (Id_stanowisko,Tytul,Opis_oferty,Wymagania,Lokalizacja,Data_wystawienia_oferty) VALUES (5,'Tester','Szukamy Testera','Umiejętność testowania aplikacji internetowych','Koszalin','2022-11-15');
 
 

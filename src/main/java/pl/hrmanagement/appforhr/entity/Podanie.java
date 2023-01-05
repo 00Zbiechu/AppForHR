@@ -11,9 +11,13 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "podanie")
+@Table(name = "podanie", indexes = {
+        @Index(name = "oferta_podanie_fk", columnList = "id_oferta"),
+        @Index(name = "petent_podanie_fk", columnList = "id_petent")
+})
 public class Podanie {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_podanie", nullable = false)
     private Integer id;
 
@@ -33,6 +37,5 @@ public class Podanie {
 
     @Column(name = "data_zlozenia_podania", nullable = false)
     private LocalDate dataZlozeniaPodania;
-
 
 }

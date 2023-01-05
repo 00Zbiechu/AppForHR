@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -12,9 +14,12 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "headhunter")
+@Table(name = "headhunter", indexes = {
+        @Index(name = "dzial_headhunter_fk", columnList = "id_dzial")
+})
 public class Headhunter {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_headhunter", nullable = false)
     private Integer id;
 
@@ -69,5 +74,8 @@ public class Headhunter {
 
     @Column(name = "headhunter_status_zatrudnienia", nullable = false)
     private Boolean headhunterStatusZatrudnienia = false;
+
+    @OneToMany(mappedBy = "idHeadhunter")
+    private Set<Rekrutacja> rekrutacjas = new LinkedHashSet<>();
 
 }

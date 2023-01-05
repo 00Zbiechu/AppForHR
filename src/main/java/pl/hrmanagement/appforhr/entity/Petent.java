@@ -2,11 +2,10 @@ package pl.hrmanagement.appforhr.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -17,6 +16,7 @@ import java.time.LocalDate;
 @Table(name = "petent")
 public class Petent {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_petent", nullable = false)
     private Integer id;
 
@@ -58,6 +58,12 @@ public class Petent {
 
     @Column(name = "petent_kod_pocztowy", nullable = false, length = 10)
     private String petentKodPocztowy;
+
+    @OneToMany(mappedBy = "idPetent")
+    private Set<Rekrutacja> rekrutacjas = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idPetent")
+    private Set<Podanie> podanies = new LinkedHashSet<>();
 
 
 }

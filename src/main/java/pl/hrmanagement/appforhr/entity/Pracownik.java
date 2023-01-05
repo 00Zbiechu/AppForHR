@@ -2,12 +2,11 @@ package pl.hrmanagement.appforhr.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Builder
 @AllArgsConstructor
@@ -18,6 +17,7 @@ import java.time.LocalDate;
 @Table(name = "pracownik")
 public class Pracownik {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pracownik", nullable = false)
     private Integer id;
 
@@ -66,5 +66,7 @@ public class Pracownik {
     @Column(name = "pracownik_status_zatrudnienia", nullable = false)
     private Boolean pracownikStatusZatrudnienia = false;
 
+    @OneToMany(mappedBy = "idPracownik")
+    private Set<HistoriaPracy> historiaPracies = new LinkedHashSet<>();
 
 }

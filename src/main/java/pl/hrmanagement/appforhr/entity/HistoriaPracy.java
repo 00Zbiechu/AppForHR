@@ -11,9 +11,14 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "historia_pracy")
+@Table(name = "historia_pracy", indexes = {
+        @Index(name = "dzial_historia_pracy_fk", columnList = "id_dzial"),
+        @Index(name = "stanowisko_historia_pracy_fk", columnList = "id_stanowisko"),
+        @Index(name = "pracownik_historia_pracy_fk", columnList = "id_pracownik")
+})
 public class HistoriaPracy {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_historia_pracy", nullable = false)
     private Integer id;
 
