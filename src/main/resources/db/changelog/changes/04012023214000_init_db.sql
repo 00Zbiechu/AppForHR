@@ -5,6 +5,18 @@
 
 
 /*==============================================================*/
+/* Table: ACCOUNT                                                 */
+/*==============================================================*/
+create table ACCOUNT (
+                       Id_account           SERIAL            not null,
+                       First_name         VARCHAR(20)         not null,
+                       Last_name          VARCHAR(20)         not null,
+                       Email              VARCHAR(30)         not null,
+                       Password           VARCHAR(100)        not null,
+                       constraint PK_ACCOUNT primary key (Id_account)
+);
+
+/*==============================================================*/
 /* Table: DZIAL                                                 */
 /*==============================================================*/
 create table DZIAL (
