@@ -1,12 +1,11 @@
 package pl.hrmanagement.appforhr.dto;
 
 import lombok.Data;
-import pl.hrmanagement.appforhr.entity.Account;
 
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link Account} entity
+ * A DTO for the {@link pl.hrmanagement.appforhr.entity.Account} entity
  */
 @Data
 public class AccountDto implements Serializable {
@@ -15,4 +14,5 @@ public class AccountDto implements Serializable {
     private final String lastName;
     private final String email;
     private final String password;
+    private final String confirmPassword;
 }

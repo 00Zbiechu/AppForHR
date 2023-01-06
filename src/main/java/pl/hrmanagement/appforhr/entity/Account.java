@@ -1,14 +1,19 @@
 package pl.hrmanagement.appforhr.entity;
 
+
+
+
 import lombok.*;
 
 import javax.persistence.*;
+
 
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "account")
 public class Account {
@@ -28,6 +33,7 @@ public class Account {
 
     @Column(name = "password", nullable = false, length = 100)
     private String password;
+
 
 
 }
