@@ -24,11 +24,11 @@
 
                                         <form th:action="@{/login-in}" th:object="${loginData}" method="post">
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" th:field="*{email}"/>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" th:field="*{email}" required/>
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" th:field="*{password}"/>
+                                                <input class="form-control" id="inputPassword" type="password" placeholder="Password" th:field="*{password}" required/>
                                                 <label for="inputPassword">Password</label>
                                             </div>
                                             <input class="d-flex align-items-center justify-content-between mt-4 mb-0 btn btn-primary" type="submit" value="Login"/>

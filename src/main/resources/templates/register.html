@@ -26,26 +26,26 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name"  th:field="*{firstName}"/>
+                                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name"  th:field="*{firstName}" required/>
                                                         <label for="inputFirstName">First name</label>
 <!--                                                        <p th:if="${#fields.hasErrors('firstName')}">Invalid Age</p>-->
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" th:field="*{lastName}"/>
+                                                        <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" th:field="*{lastName}" required minlength="2" maxlength="20"/>
                                                         <label for="inputLastName">Last name</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" th:field="*{email}"/>
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" th:field="*{email}" required minlength="5" maxlength="30"/>
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" th:field="*{password}"/>
+                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" th:field="*{password}" required minlength="4" maxlength="30  "/>
                                                         <label for="inputPassword">Password</label>
                                                     </div>
                                                 </div>
@@ -75,5 +75,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script th:src="@{/scripts.js}"></script>
+        <script th:src="@{/validation.js}"></script>
     </body>
 </html>
