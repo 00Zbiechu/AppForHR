@@ -6,6 +6,8 @@ package pl.hrmanagement.appforhr.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 
 
 @Builder
