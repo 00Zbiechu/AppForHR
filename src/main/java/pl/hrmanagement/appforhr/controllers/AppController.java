@@ -1,17 +1,24 @@
 package pl.hrmanagement.appforhr.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import pl.hrmanagement.appforhr.service.PracownikService;
 
-@Controller
+
+@RestController
 @RequestMapping("/app")
+@RequiredArgsConstructor
 public class AppController {
 
-    @GetMapping()
-    public String getIndexPage(Model model) {
+    private final PracownikService pracownikService;
+
+    @GetMapping
+    public String getIndexPage() {
         return "app";
+
     }
+
 
 }

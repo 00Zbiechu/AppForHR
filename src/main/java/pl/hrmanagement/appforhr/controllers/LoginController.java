@@ -1,6 +1,8 @@
 package pl.hrmanagement.appforhr.controllers;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.hrmanagement.appforhr.dto.LoginDto;
 import pl.hrmanagement.appforhr.service.LoginService;
+import pl.hrmanagement.appforhr.service.PracownikService;
 
 import javax.validation.Valid;
 
@@ -16,6 +19,12 @@ import javax.validation.Valid;
 public class LoginController {
 
     private final LoginService loginService;
+
+    private final PracownikService pracownikService;
+
+    @Setter
+    @Getter
+    public static LoginDto loginDto;
 
 
     //Login in
@@ -43,6 +52,12 @@ public class LoginController {
 
         }else{
 
+            //What user see after change view
+            model.addAttribute("table",pracownikService.getListOfActiveEmployee());
+            model.addAttribute("marks", "Employee");
+
+            //Set user login before send to another view
+            LoginController.setLoginDto(loginDto);
             model.addAttribute("loggedUser",loginDto);
             return "app";
 

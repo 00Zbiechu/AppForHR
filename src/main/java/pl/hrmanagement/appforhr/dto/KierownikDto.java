@@ -11,7 +11,6 @@ import java.time.LocalDate;
  */
 @Data
 public class KierownikDto implements Serializable {
-    private final Integer id;
     private final String kierownikImie;
     private final String kierownikNazwisko;
     private final LocalDate kierownikDataUrodzenia;

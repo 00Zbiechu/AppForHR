@@ -11,7 +11,6 @@ import java.time.LocalDate;
  */
 @Data
 public class PracownikDto implements Serializable {
-    private final Integer id;
     private final String pracownikImie;
     private final String pracownikNazwisko;
     private final LocalDate pracownikDataUrodzenia;
