@@ -146,7 +146,7 @@
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Application</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <form th:action="@{/application}" method="get">
+                                        <form th:action="@{/showoffer}" method="get">
                                             <input class="small stretched-link" type="submit" value="View Details"/>
                                         </form>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -159,6 +159,39 @@
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <form th:action="@{/department}" method="get">
                                             <input class="small stretched-link" type="submit" value="View Details"/>
+                                        </form>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-light text-secondary mb-4">
+                                    <div class="card-body">Work History</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <form th:action="@{/story}" method="get">
+                                            <input class="small stretched-link" type="submit" value="View Details"/>
+                                        </form>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-light  mb-4">
+                                    <div class="card-body">Job application for position</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <form th:action="@{/application}" method="get">
+                                            <input class="small stretched-link" type="submit" value="View Details"/>
+                                        </form>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-success text-light mb-4">
+                                    <div class="card-body">Create Offer</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <form th:action="@{/createoffer}" method="get">
+                                            <input class="small stretched-link" type="submit" value="Create"/>
                                         </form>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
