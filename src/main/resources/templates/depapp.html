@@ -174,58 +174,39 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-
                                             <th>Name</th>
-                                            <th>Surname</th>
-                                            <th>Position</th>
-                                            <th>Department</th>
-                                            <th>Salary</th>
-                                            <th>Phone Number</th>
-                                            <th>Mail</th>
-                                            <th>Birth Date</th>
-                                            <th>ID Number</th>
-                                            <th>Street</th>
+                                            <th>Description</th>
+                                            <th>Number of Available Job</th>
                                             <th>City</th>
-                                            <th>Country</th>
+                                            <th>Street</th>
                                             <th>State</th>
-                                            <th>Post Code</th>
+                                            <th>Postcode</th>
+                                            <th>Country</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-
                                             <th>Name</th>
-                                            <th>Surname</th>
-                                            <th>Position</th>
-                                            <th>Department</th>
-                                            <th>Salary</th>
-                                            <th>Phone Number</th>
-                                            <th>Mail</th>
-                                            <th>Birth Date</th>
-                                            <th>ID Number</th>
-                                            <th>Street</th>
+                                            <th>Description</th>
+                                            <th>Number of Available Job</th>
                                             <th>City</th>
-                                            <th>Country</th>
+                                            <th>Street</th>
                                             <th>State</th>
-                                            <th>Post Code</th>
+                                            <th>Postcode</th>
+                                            <th>Country</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr th:each="tableRecord : ${table}">
                                             <td th:text="${tableRecord.getName()}"/>
-                                            <td th:text="${tableRecord.getSurname()}"/>
-                                            <td th:text="${tableRecord.getPosition()}"/>
-                                            <td th:text="${tableRecord.getDepartment()}"/>
-                                            <td th:text="${tableRecord.getSalary()}"/>
-                                            <td th:text="${tableRecord.getPhoneNumber()}"/>
-                                            <td th:text="${tableRecord.getMail()}"/>
-                                            <td th:text="${tableRecord.getBirthDate()}"/>
-                                            <td th:text="${tableRecord.getIdNumber()}"/>
-                                            <td th:text="${tableRecord.getStreet()}"/>
+                                            <td th:text="${tableRecord.getDesc()}"/>
+                                            <td th:text="${tableRecord.getCount()}"/>
                                             <td th:text="${tableRecord.getCity()}"/>
-                                            <td th:text="${tableRecord.getCountry()}"/>
+                                            <td th:text="${tableRecord.getStreet()}"/>
                                             <td th:text="${tableRecord.getState()}"/>
                                             <td th:text="${tableRecord.getPostcode()}"/>
+                                            <td th:text="${tableRecord.getCountry()}"/>
+
                                         </tr>
                                     </tbody>
                                 </table>

@@ -454,19 +454,6 @@ alter table REKRUTACJA
 /* Index: INSERTS                                      */
 /*==============================================================*/
 
-delete from historia_pracy;
-delete from pracownik;
-delete from kierownik;
-delete from rekrutacja;
-delete from podanie;
-delete from petent;
-delete from oferta;
-delete from stanowisko;
-delete from headhunter;
-delete from dzial;
-delete from lokalizacja;
-delete from kraj;
-
 INSERT INTO KRAJ(Kraj_nazwa) VALUES ('Polska');
 INSERT INTO KRAJ(Kraj_nazwa) VALUES ('Niemcy');
 INSERT INTO KRAJ(Kraj_nazwa) VALUES ('Francja');

@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public interface PracownikRepository extends JpaRepository<Pracownik, Integer> {
 
-
     @Query("select p.id as id, p.pracownikImie as name, p.pracownikNazwisko as surname, s.nazwaStanowiska as position," +
             " d.nazwaDzialu as department, p.pracownikZarobki as salary, p.pracownikNrTelefonu as phoneNumber, " +
             " p.pracownikMail as mail, p.pracownikDataUrodzenia as birthDate, p.pracownikPesel as idNumber," +

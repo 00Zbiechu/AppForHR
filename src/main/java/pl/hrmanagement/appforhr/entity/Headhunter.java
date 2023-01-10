@@ -1,6 +1,8 @@
 package pl.hrmanagement.appforhr.entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -14,6 +16,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@DynamicUpdate
+@DynamicInsert
 @Table(name = "headhunter", indexes = {
         @Index(name = "dzial_headhunter_fk", columnList = "id_dzial")
 })

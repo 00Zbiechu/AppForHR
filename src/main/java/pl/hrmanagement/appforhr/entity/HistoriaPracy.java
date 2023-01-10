@@ -1,6 +1,8 @@
 package pl.hrmanagement.appforhr.entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
+@DynamicUpdate
+@DynamicInsert
 @Table(name = "historia_pracy", indexes = {
         @Index(name = "dzial_historia_pracy_fk", columnList = "id_dzial"),
         @Index(name = "stanowisko_historia_pracy_fk", columnList = "id_stanowisko"),
