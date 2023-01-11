@@ -1,9 +1,6 @@
 package pl.hrmanagement.appforhr.dto;
 
 import lombok.*;
-import pl.hrmanagement.appforhr.entity.Stanowisko;
-
-import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -13,7 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class OfertaToSaveDTO {
 
-    private Stanowisko stanowisko;
+    private Integer idStanowisko;
 
     private String tytul;
 
@@ -23,6 +20,5 @@ public class OfertaToSaveDTO {
 
     private String lokalizacja;
 
-    private LocalDate dataWystawieniaOferty;
 
 }

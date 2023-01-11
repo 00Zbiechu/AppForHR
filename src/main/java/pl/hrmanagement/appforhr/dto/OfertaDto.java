@@ -19,7 +19,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class OfertaDto implements Serializable {
 
-    private Integer idStanowisko;
+    private Stanowisko idStanowisko;
     @NotBlank
     @Size(min = 0,max = 30, message = "Too long")
     private String tytul;

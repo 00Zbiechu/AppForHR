@@ -12,7 +12,7 @@
     <link th:href="@{/styles.css}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed" style="background-color:#f11919; padding: 30px;">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
 
@@ -35,15 +35,15 @@
 </nav>
 
 
-<section class="vh-100 shadow-for-container" style="background-color:#f11919;">
+<section class="vh-100">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-9">
 
-                <h1 class="text-white mb-4">Create Offer</h1>
+                <h1 class="text-white mb-4" style="margin-top: 30px;">Create Offer</h1>
 
-                <div class="card" style="border-radius: 4px;">
-                    <div class="card-body">
+                <div class="card" style="border-radius: 4px;margin-bottom: 20px;">
+                    <div class="card-body shadow-for-container" >
 
                         <form th:action="@{/save-offer}" th:object="${newOffer}" method="post">
 
