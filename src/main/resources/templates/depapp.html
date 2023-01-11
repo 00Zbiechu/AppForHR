@@ -14,7 +14,9 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="app.html" >HR MANAGEMENT</a>
+            <form th:action="@{/employee}" method="get">
+                <input class="navbar-brand ps-3 bg-dark" type="submit" value="HR MANAGEMENT" style="border: none"/>
+            </form>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -146,7 +148,7 @@
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">Application</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <form th:action="@{/showoffer}" method="get">
+                                        <form th:action="@{/getoffers}" method="get">
                                             <input class="small stretched-link" type="submit" value="View Details"/>
                                         </form>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>

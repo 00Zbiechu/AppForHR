@@ -7,9 +7,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pl.hrmanagement.appforhr.dto.OfertaToSaveDTO;
 import pl.hrmanagement.appforhr.dto.StanowiskoDto;
 import pl.hrmanagement.appforhr.entity.Stanowisko;
+import pl.hrmanagement.appforhr.projections.ListOfOffers;
 import pl.hrmanagement.appforhr.repository.StanowiskoRepository;
 import pl.hrmanagement.appforhr.service.OfertaService;
 
@@ -24,6 +26,15 @@ public class OfertaController {
     private final OfertaService ofertaService;
 
     private final StanowiskoRepository stanowiskoRepository;
+
+    @GetMapping("/getoffers")
+    public String getOfferPage(Model model){
+
+       List<ListOfOffers> listOfOffers = ofertaService.getListOfOffers();
+       model.addAttribute("listOfOffers",listOfOffers);
+       return "showoffers";
+
+    }
 
 
     @GetMapping("/createoffer")

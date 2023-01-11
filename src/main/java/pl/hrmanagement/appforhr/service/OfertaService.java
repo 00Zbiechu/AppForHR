@@ -7,10 +7,12 @@ import pl.hrmanagement.appforhr.dto.OfertaToSaveDTO;
 import pl.hrmanagement.appforhr.entity.Oferta;
 import pl.hrmanagement.appforhr.entity.Stanowisko;
 import pl.hrmanagement.appforhr.mapper.OfertaMapper;
+import pl.hrmanagement.appforhr.projections.ListOfOffers;
 import pl.hrmanagement.appforhr.repository.OfertaRepository;
 import pl.hrmanagement.appforhr.repository.StanowiskoRepository;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,10 +20,15 @@ public class OfertaService {
 
     private final OfertaRepository ofertaRepository;
 
-
     private final OfertaMapper ofertaMapper;
 
     private final StanowiskoRepository stanowiskoRepository;
+
+    public List<ListOfOffers> getListOfOffers(){
+
+        return ofertaRepository.getListOfOffers();
+
+    }
 
 
     public void createOffer(OfertaToSaveDTO ofertaToSaveDTO){

@@ -14,6 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "oferta", indexes = {
         @Index(name = "oferta_stanowisko_fk", columnList = "id_stanowisko")
