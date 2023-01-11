@@ -6,4 +6,8 @@ import pl.hrmanagement.appforhr.entity.Stanowisko;
 
 @Repository
 public interface StanowiskoRepository extends JpaRepository<Stanowisko, Integer> {
+
+    Stanowisko findStanowiskoById(Integer id);
+
+
 }

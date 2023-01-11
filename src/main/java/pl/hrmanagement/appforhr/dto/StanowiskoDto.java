@@ -1,6 +1,6 @@
 package pl.hrmanagement.appforhr.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,11 +8,16 @@ import java.math.BigDecimal;
 /**
  * A DTO for the {@link pl.hrmanagement.appforhr.entity.Stanowisko} entity
  */
-@Data
+@Getter
+@Setter
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class StanowiskoDto implements Serializable {
-    private final Integer id;
-    private final String nazwaStanowiska;
-    private final String opisStanowiska;
-    private final BigDecimal minimalneZarobki;
-    private final BigDecimal maksymalneZarobki;
+    private Integer id;
+    private String nazwaStanowiska;
+    private String opisStanowiska;
+    private BigDecimal minimalneZarobki;
+    private BigDecimal maksymalneZarobki;
 }
