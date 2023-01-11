@@ -2,7 +2,8 @@ package pl.hrmanagement.appforhr.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -16,18 +17,18 @@ import java.io.Serializable;
 public class AccountDto implements Serializable {
 
     @NotBlank(message = "First name can't be empty.")
-    @Size(min = 0,max = 20, message = "Too long")
+    @Size(min = 0, max = 20, message = "Too long")
     private String firstName;
 
     @NotBlank(message = "Last name name can't be empty.")
-    @Size(min = 0,max = 20, message = "Too long")
+    @Size(min = 0, max = 20, message = "Too long")
     private String lastName;
 
     @NotBlank(message = "Email can't be empty.")
-    @Size(min = 0,max = 30, message = "Too long")
+    @Size(min = 0, max = 30, message = "Too long")
     private String email;
 
     @NotBlank(message = "Password can't be empty.")
-    @Size(min = 0,max = 100, message = "Too long")
+    @Size(min = 0, max = 100, message = "Too long")
     private String password;
 }

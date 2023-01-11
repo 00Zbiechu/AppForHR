@@ -24,14 +24,14 @@ public class OfertaService {
 
     private final StanowiskoRepository stanowiskoRepository;
 
-    public List<ListOfOffers> getListOfOffers(){
+    public List<ListOfOffers> getListOfOffers() {
 
         return ofertaRepository.getListOfOffers();
 
     }
 
 
-    public void createOffer(OfertaToSaveDTO ofertaToSaveDTO){
+    public void createOffer(OfertaToSaveDTO ofertaToSaveDTO) {
 
 
         //Pobranie stanowiska na podstawie id z obiektu OfertaToSaveDTO
@@ -51,8 +51,6 @@ public class OfertaService {
         Oferta oferta = ofertaMapper.toEntity(ofertaDto);
 
         ofertaRepository.save(oferta);
-
-
 
 
     }

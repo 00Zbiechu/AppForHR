@@ -15,20 +15,11 @@ public class LoginService {
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 
-
-    public boolean loginIntoAccount(LoginDto loginDto){
+    public boolean loginIntoAccount(LoginDto loginDto) {
 
         String hashedPass = loginRepository.getPasswordForGivenEmail(loginDto.getEmail());
 
-        if(passwordEncoder.matches(loginDto.getPassword(),hashedPass)){
-
-            return true;
-
-        }else{
-
-            return false;
-
-        }
+        return passwordEncoder.matches(loginDto.getPassword(), hashedPass);
 
 
     }

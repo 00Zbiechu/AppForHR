@@ -19,8 +19,7 @@ public class RegisterService {
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 
-
-    public String hashPassword(String password){
+    public String hashPassword(String password) {
 
         String encodedPassword = passwordEncoder.encode(password);
         return encodedPassword;
@@ -29,21 +28,13 @@ public class RegisterService {
     }
 
 
-    public boolean isEmailUnique(Account account){
+    public boolean isEmailUnique(Account account) {
 
-        if(registerRepository.isEmailUnique(account.getEmail().toLowerCase()).isPresent()){
-
-            return false;
-
-        }else {
-
-            return true;
-
-        }
+        return registerRepository.isEmailUnique(account.getEmail().toLowerCase()).isEmpty();
 
     }
 
-    public boolean saveAccount(AccountDto accountDto){
+    public boolean saveAccount(AccountDto accountDto) {
 
         Account account = accountMapper.toEntity(accountDto);
 
@@ -51,7 +42,7 @@ public class RegisterService {
         account.setEmail(account.getEmail().toLowerCase());
 
         //Check if email is unique
-        if(isEmailUnique(account)){
+        if (isEmailUnique(account)) {
 
             //Hashowanie hasła
             String newPassword = this.hashPassword(account.getPassword());
@@ -61,13 +52,11 @@ public class RegisterService {
 
             return true;
 
-        }else{
+        } else {
 
             return false;
 
         }
-
-
 
 
     }

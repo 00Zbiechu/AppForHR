@@ -21,16 +21,16 @@ public class OfertaDto implements Serializable {
 
     private Stanowisko idStanowisko;
     @NotBlank
-    @Size(min = 0,max = 30, message = "Too long")
+    @Size(min = 0, max = 30, message = "Too long")
     private String tytul;
     @NotBlank
-    @Size(min = 0,max = 100, message = "Too long")
+    @Size(min = 0, max = 100, message = "Too long")
     private String opisOferty;
     @NotBlank
-    @Size(min = 0,max = 100, message = "Too long")
+    @Size(min = 0, max = 100, message = "Too long")
     private String wymagania;
     @NotBlank
-    @Size(min = 0,max = 20, message = "Too long")
+    @Size(min = 0, max = 20, message = "Too long")
     private String lokalizacja;
 
     private LocalDate dataWystawieniaOferty;

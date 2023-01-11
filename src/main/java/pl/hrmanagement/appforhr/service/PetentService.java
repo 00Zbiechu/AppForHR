@@ -13,7 +13,7 @@ public class PetentService {
 
     private final PetentRepository petentRepository;
 
-    public List<ListApplicationForJob> getApplicationForEachPosition(){
+    public List<ListApplicationForJob> getApplicationForEachPosition() {
 
         return petentRepository.getApplicationForEachPosition();
 

@@ -18,26 +18,23 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class LoginController {
 
-    private final LoginService loginService;
-
-    private final PracownikService pracownikService;
-
     @Setter
     @Getter
     public static LoginDto loginDto;
-
+    private final LoginService loginService;
+    private final PracownikService pracownikService;
 
     //Login in
     @GetMapping
     public String getLoginPage(Model model) {
 
-        model.addAttribute("loginData",new LoginDto());
+        model.addAttribute("loginData", new LoginDto());
         return "login";
 
     }
 
     @PostMapping("/login-in")
-    public String loginIn(@Valid LoginDto loginDto, BindingResult result, Model model){
+    public String loginIn(@Valid LoginDto loginDto, BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             return "redirect:/";
@@ -46,24 +43,22 @@ public class LoginController {
 
         //Mail lowercase
         loginDto.setEmail(loginDto.getEmail().toLowerCase());
-        if(!loginService.loginIntoAccount(loginDto)){
+        if (!loginService.loginIntoAccount(loginDto)) {
 
             return "redirect:/";
 
-        }else{
+        } else {
 
             //What user see after change view
-            model.addAttribute("table",pracownikService.getListOfActiveEmployee());
+            model.addAttribute("table", pracownikService.getListOfActiveEmployee());
             model.addAttribute("marks", "Employee");
 
             //Set user login before send to another view
             LoginController.setLoginDto(loginDto);
-            model.addAttribute("loggedUser",loginDto);
+            model.addAttribute("loggedUser", loginDto);
             return "app";
 
         }
-
-
 
 
     }
