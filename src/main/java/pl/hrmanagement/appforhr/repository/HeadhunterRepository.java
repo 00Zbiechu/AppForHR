@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import pl.hrmanagement.appforhr.entity.Headhunter;
 import pl.hrmanagement.appforhr.projections.ListActiveHeadhunter;
+import pl.hrmanagement.appforhr.projections.ListActiveManagers;
 
 import java.util.List;
 

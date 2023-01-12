@@ -1,5 +1,6 @@
 package pl.hrmanagement.appforhr.projections;
 
+import org.hibernate.annotations.Target;
 import org.springframework.beans.factory.annotation.Value;
 import pl.hrmanagement.appforhr.entity.Pracownik;
 
@@ -40,6 +41,7 @@ public interface ListActiveManagers {
     String getState();
 
     String getPostcode();
+
 
 
 }

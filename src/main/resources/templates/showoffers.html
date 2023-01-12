@@ -26,29 +26,29 @@
                             <div class="card-body">
 
 
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <p class="fw-bolder">Position: <span class="fw-light" th:text="${i.getPosition()}"></span> </p>
-                                            </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <p class="fw-bolder">Position: <span class="fw-light" th:text="${i.getPosition()}"></span> </p>
                                         </div>
                                     </div>
+                                </div>
                                 <hr>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <p class="fw-bolder">Description: <span class="fw-light" th:text="${i.getDesc()}"></span> </p>
-                                            </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <p class="fw-bolder">Description: <span class="fw-light" th:text="${i.getDesc()}"></span> </p>
                                         </div>
                                     </div>
+                                </div>
                                 <hr>
-                                    <div class="row mb-3">
-                                        <div class="col-md-6">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <p class="fw-bolder">Requirements: <span class="fw-light" th:text="${i.getReq()}"></span> </p>
-                                            </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <p class="fw-bolder">Requirements: <span class="fw-light" th:text="${i.getReq()}"></span> </p>
                                         </div>
                                     </div>
+                                </div>
                                 <hr>
                                 <div class="row mb-3">
                                     <div class="col-md-6">
@@ -57,25 +57,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <div class="row mb-3">
-                                        <div class="col-md-5">
-                                            <div class="form-floating mb-3 mb-md-0">
-                                                <p class="fw-bolder">Offer creation date: <span class="fw-light" th:text="${i.getDate()}"></span> </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-floating mb-6 mb-md-0 d-flex flex-row-reverse">
-
-
-                                                <form th:action="@{/sendcv/{id}(id = ${i.getId()})}" method="get">
-
-                                                    <input type="submit" class="btn btn-warning fw-bold" value="SEND YOUR CV"/>
-
-                                                </form>
-
-                                            </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-5">
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <p class="fw-bolder">Offer creation date: <span class="fw-light" th:text="${i.getDate()}"></span> </p>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-6 mb-md-0 d-flex flex-row-reverse">
+
+
+                                            <form th:action="@{/sendcv/{id}(id = ${i.getId()})}" method="get">
+
+                                                <input type="submit" class="btn btn-warning fw-bold" value="SEND YOUR CV"/>
+
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
 
 
 

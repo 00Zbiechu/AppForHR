@@ -15,14 +15,14 @@ public class HeadhunterController {
     private final HeadhunterService headhunterService;
 
     @GetMapping
-    public String getHeadhunterPage(Model model) {
+    public String getHeadhunterPage(Model model){
 
         //What user see after change view
-        model.addAttribute("table", headhunterService.getListOfActiveHeadhunters());
+        model.addAttribute("table",headhunterService.getListOfActiveHeadhunters());
         model.addAttribute("marks", "Headhunter");
 
         //Set user login before send to another view
-        model.addAttribute("loggedUser", LoginController.getLoginDto());
+        model.addAttribute("loggedUser",LoginController.getLoginDto());
         return "app";
 
     }

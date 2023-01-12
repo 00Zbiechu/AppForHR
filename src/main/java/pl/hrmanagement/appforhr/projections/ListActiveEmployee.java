@@ -1,5 +1,7 @@
 package pl.hrmanagement.appforhr.projections;
 
+import pl.hrmanagement.appforhr.entity.Pracownik;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -38,6 +40,7 @@ public interface ListActiveEmployee {
     String getState();
 
     String getPostcode();
+
 
 
 }

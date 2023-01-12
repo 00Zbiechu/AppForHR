@@ -3,7 +3,7 @@ package pl.hrmanagement.appforhr.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.hrmanagement.appforhr.dto.OfertaDto;
-import pl.hrmanagement.appforhr.dto.OfertaToSaveDto;
+import pl.hrmanagement.appforhr.dto.OfertaToSaveDTO;
 import pl.hrmanagement.appforhr.entity.Oferta;
 import pl.hrmanagement.appforhr.entity.Stanowisko;
 import pl.hrmanagement.appforhr.mapper.OfertaMapper;
@@ -24,17 +24,17 @@ public class OfertaService {
 
     private final StanowiskoRepository stanowiskoRepository;
 
-    public List<ListOfOffers> getListOfOffers() {
+    public List<ListOfOffers> getListOfOffers(){
 
         return ofertaRepository.getListOfOffers();
 
     }
 
 
-    public void createOffer(OfertaToSaveDto ofertaToSaveDTO) {
+    public void createOffer(OfertaToSaveDTO ofertaToSaveDTO){
 
 
-        //Pobranie stanowiska na podstawie id z obiektu OfertaToSaveDto
+        //Pobranie stanowiska na podstawie id z obiektu OfertaToSaveDTO
         Stanowisko stanowisko = stanowiskoRepository.findStanowiskoById(ofertaToSaveDTO.getIdStanowisko());
 
         //Ustawienie nowych właściwosći na nowym obiekcie OfertaDTO
@@ -51,6 +51,8 @@ public class OfertaService {
         Oferta oferta = ofertaMapper.toEntity(ofertaDto);
 
         ofertaRepository.save(oferta);
+
+
 
 
     }

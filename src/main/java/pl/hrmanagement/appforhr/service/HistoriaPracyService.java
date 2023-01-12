@@ -14,7 +14,7 @@ public class HistoriaPracyService {
     private final HistoriaPracyRepository historiaPracyRepository;
 
 
-    public List<ListEmployeeJobStory> whenEmployeeStartAndEndJob() {
+    public List<ListEmployeeJobStory> whenEmployeeStartAndEndJob(){
 
         return historiaPracyRepository.whenEmployeeStartAndEndJob();
 

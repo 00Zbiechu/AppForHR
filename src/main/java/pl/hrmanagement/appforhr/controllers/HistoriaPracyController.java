@@ -15,14 +15,14 @@ public class HistoriaPracyController {
     private final HistoriaPracyService historiaPracyService;
 
     @GetMapping
-    public String getDepartmentPage(Model model) {
+    public String getDepartmentPage(Model model){
 
         //What user see after change view
-        model.addAttribute("table", historiaPracyService.whenEmployeeStartAndEndJob());
+        model.addAttribute("table",historiaPracyService.whenEmployeeStartAndEndJob());
         model.addAttribute("marks", "Story");
 
         //Set user login before send to another view
-        model.addAttribute("loggedUser", LoginController.getLoginDto());
+        model.addAttribute("loggedUser",LoginController.getLoginDto());
         return "stoapp";
 
     }

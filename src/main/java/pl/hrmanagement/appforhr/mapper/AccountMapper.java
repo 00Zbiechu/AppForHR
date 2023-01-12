@@ -9,7 +9,6 @@ import pl.hrmanagement.appforhr.entity.Account;
 public interface AccountMapper {
 
     AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);
-
     Account toEntity(AccountDto accountDto);
 
     AccountDto toDto(Account account);

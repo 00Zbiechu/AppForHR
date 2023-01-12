@@ -14,7 +14,7 @@ public class DzialService {
 
     private final DzialRepository dzialRepository;
 
-    public List<ListOfDepartments> getListOfDepartments() {
+    public List<ListOfDepartments> getListOfDepartments(){
 
         return dzialRepository.getListOfDepartments();
 

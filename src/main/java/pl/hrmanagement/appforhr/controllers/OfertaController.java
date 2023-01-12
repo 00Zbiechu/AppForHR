@@ -5,8 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.hrmanagement.appforhr.dto.OfertaToSaveDto;
+import org.springframework.web.bind.annotation.RestController;
+import pl.hrmanagement.appforhr.dto.OfertaToSaveDTO;
+import pl.hrmanagement.appforhr.dto.StanowiskoDto;
 import pl.hrmanagement.appforhr.entity.Stanowisko;
 import pl.hrmanagement.appforhr.projections.ListOfOffers;
 import pl.hrmanagement.appforhr.repository.StanowiskoRepository;
@@ -14,6 +17,7 @@ import pl.hrmanagement.appforhr.service.OfertaService;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,35 +28,35 @@ public class OfertaController {
     private final StanowiskoRepository stanowiskoRepository;
 
     @GetMapping("/getoffers")
-    public String getOfferPage(Model model) {
+    public String getOfferPage(Model model){
 
-        List<ListOfOffers> listOfOffers = ofertaService.getListOfOffers();
-        model.addAttribute("listOfOffers", listOfOffers);
-        return "showoffers";
+       List<ListOfOffers> listOfOffers = ofertaService.getListOfOffers();
+       model.addAttribute("listOfOffers",listOfOffers);
+       return "showoffers";
 
     }
 
 
     @GetMapping("/createoffer")
-    public String getCreateOfferPage(Model model) {
+    public String getCreateOfferPage(Model model){
 
-        model.addAttribute("newOffer", new OfertaToSaveDto());
+        model.addAttribute("newOffer",new OfertaToSaveDTO());
         List<Stanowisko> stanowiska = stanowiskoRepository.findAll();
-        model.addAttribute("position", stanowiska);
+        model.addAttribute("position",stanowiska);
         return "createoffersite";
 
     }
 
 
     @PostMapping("/save-offer")
-    public String createOffer(@Valid OfertaToSaveDto ofertaToSaveDTO, BindingResult result, Model model) {
+    public String createOffer(@Valid OfertaToSaveDTO ofertaToSaveDTO, BindingResult result, Model model){
 
 
         if (result.hasErrors()) {
 
-            model.addAttribute("newOffer", new OfertaToSaveDto());
+            model.addAttribute("newOffer",new OfertaToSaveDTO());
             List<Stanowisko> stanowisko = stanowiskoRepository.findAll();
-            model.addAttribute("position", stanowisko);
+            model.addAttribute("position",stanowisko);
             return "createoffersite";
 
         }

@@ -10,7 +10,6 @@ import pl.hrmanagement.appforhr.dto.AccountDto;
 import pl.hrmanagement.appforhr.service.RegisterService;
 
 import javax.validation.Valid;
-
 @Controller
 @RequiredArgsConstructor
 public class RegisterController {
@@ -32,15 +31,16 @@ public class RegisterController {
             return "register";
         }
 
-        if (registerService.saveAccount(accountDto)) {
+        if(registerService.saveAccount(accountDto)){
 
             return "redirect:/";
 
-        } else {
+        }else{
 
             return "redirect:/register";
 
         }
+
 
 
     }

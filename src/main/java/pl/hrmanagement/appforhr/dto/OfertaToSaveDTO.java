@@ -8,7 +8,8 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class OfertaToSaveDto {
+public class OfertaToSaveDTO {
+
 
     private Integer idStanowisko;
 
@@ -22,3 +23,6 @@ public class OfertaToSaveDto {
 
 
 }
+
+
+
