@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.hrmanagement.appforhr.dto.OfertaToSaveDTO;
+import pl.hrmanagement.appforhr.dto.OfertaToSaveDto;
 import pl.hrmanagement.appforhr.entity.Stanowisko;
 import pl.hrmanagement.appforhr.projections.ListOfOffers;
 import pl.hrmanagement.appforhr.repository.StanowiskoRepository;
@@ -36,7 +36,7 @@ public class OfertaController {
     @GetMapping("/createoffer")
     public String getCreateOfferPage(Model model) {
 
-        model.addAttribute("newOffer", new OfertaToSaveDTO());
+        model.addAttribute("newOffer", new OfertaToSaveDto());
         List<Stanowisko> stanowiska = stanowiskoRepository.findAll();
         model.addAttribute("position", stanowiska);
         return "createoffersite";
@@ -45,12 +45,12 @@ public class OfertaController {
 
 
     @PostMapping("/save-offer")
-    public String createOffer(@Valid OfertaToSaveDTO ofertaToSaveDTO, BindingResult result, Model model) {
+    public String createOffer(@Valid OfertaToSaveDto ofertaToSaveDTO, BindingResult result, Model model) {
 
 
         if (result.hasErrors()) {
 
-            model.addAttribute("newOffer", new OfertaToSaveDTO());
+            model.addAttribute("newOffer", new OfertaToSaveDto());
             List<Stanowisko> stanowisko = stanowiskoRepository.findAll();
             model.addAttribute("position", stanowisko);
             return "createoffersite";

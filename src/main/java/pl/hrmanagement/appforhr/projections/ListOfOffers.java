@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public interface ListOfOffers {
 
+    Integer getId();
+
     String getTitle();
 
     String getPosition();

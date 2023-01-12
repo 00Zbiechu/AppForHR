@@ -11,9 +11,13 @@ import java.util.List;
 @Repository
 public interface OfertaRepository extends JpaRepository<Oferta, Integer> {
 
-    @Query("SELECT o.tytul as title, s.nazwaStanowiska as position, o.opisOferty as desc, o.wymagania as req," +
+    @Query("SELECT o.id as id,o.tytul as title, s.nazwaStanowiska as position, o.opisOferty as desc, o.wymagania as req," +
             " o.lokalizacja as loc, o.dataWystawieniaOferty as date " +
             "FROM Oferta o JOIN o.idStanowisko s")
     List<ListOfOffers> getListOfOffers();
+
+
+    @Query("SELECT o FROM Oferta o WHERE o.id=:id")
+    Oferta getOfertaById(Integer id);
 
 }
